@@ -63,10 +63,26 @@ export default function EvolvePage() {
     <div className="min-h-screen bg-linear-to-br from-taupe-s to-nude-s text-gray-800 font-sans">
       {/* Hero Section */}
       <section className="max-w-350 mx-auto my-12 px-[5%] text-center">
-        <h1 className="text-6xl font-bold mb-4 bg-linear-to-br from-black to-mocha bg-clip-text text-transparent">
-          Aprende Maquillaje como una Profesional
-        </h1>
-        <p className="text-xl text-white mb-8">
+        {/* Título con efecto cristal dorado */}
+        <div className="relative inline-block mx-auto mb-8">
+          {/* Sombra/resplandor exterior */}
+          <div className="absolute -inset-1 bg-linear-to-r from-amber-600/40 via-yellow-500/30 to-amber-700/40 rounded-full blur-xl"></div>
+
+          {/* Contenedor principal con efecto cristal */}
+          <div className="relative px-12 py-6 rounded-full bg-linear-to-br from-amber-800/60 via-amber-600/40 to-amber-900/60 backdrop-blur-md border-2 border-amber-500/50 shadow-[inset_0_2px_20px_rgba(255,215,0,0.2),0_10px_40px_rgba(0,0,0,0.3)]">
+            {/* Borde interior brillante */}
+            <div className="absolute inset-1 rounded-full border border-amber-400/30 pointer-events-none"></div>
+
+            {/* Reflejo superior */}
+            <div className="absolute top-2 left-8 right-8 h-4 bg-linear-to-r from-transparent via-amber-300/20 to-transparent rounded-full"></div>
+
+            <h1 className="relative text-4xl md:text-5xl font-bold bg-linear-to-br from-amber-100 via-amber-200 to-amber-400 bg-clip-text text-transparent drop-shadow-lg">
+              Aprende Maquillaje como una Profesional
+            </h1>
+          </div>
+        </div>
+
+        <p className="text-2xl  mb-8 text-gray-700">
           Tutoriales en video paso a paso para transformar tu pasión en habilidad
         </p>
       </section>
@@ -86,7 +102,7 @@ export default function EvolvePage() {
               <div className="absolute bottom-0 left-0 right-0 p-12 text-white z-10">
                 <h3 className="text-4xl font-bold mb-4">{item.title}</h3>
                 <p className="text-xl mb-6">{item.description}</p>
-                <button className="inline-block px-10 py-4 bg-gradient-to-br from-black to-[#D4C5AE] text-white rounded-full font-semibold hover:translate-y-[-3px] hover:shadow-xl transition-all duration-300">
+                <button className="inline-block px-10 py-4 bg-linear-to-br from-black to-dorado text-white rounded-full font-semibold hover:translate-y-[-3px] hover:shadow-xl transition-all duration-300">
                   Ver Tutorial
                 </button>
               </div>
@@ -98,13 +114,13 @@ export default function EvolvePage() {
         <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-4 z-20">
           <button
             onClick={() => moveCarousel(-1)}
-            className="bg-white/90 w-[50px] h-[50px] rounded-full text-2xl text-[#D4C5AE] hover:bg-white hover:scale-110 transition-all duration-300"
+            className="bg-white/90 w-12.5 h-12.5 rounded-full text-2xl text-[#D4C5AE] hover:bg-white hover:scale-110 transition-all duration-300"
           >
             ❮
           </button>
           <button
             onClick={() => moveCarousel(1)}
-            className="bg-white/90 w-[50px] h-[50px] rounded-full text-2xl text-[#D4C5AE] hover:bg-white hover:scale-110 transition-all duration-300"
+            className="bg-white/90 w-12.5 h-12.5 rounded-full text-2xl text-[#D4C5AE] hover:bg-white hover:scale-110 transition-all duration-300"
           >
             ❯
           </button>
@@ -141,7 +157,7 @@ export default function EvolvePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-br from-black to-[#D4C5AE] text-white text-center py-20 px-[5%] mt-20">
+      <section className="bg-mocha text-white text-center py-20 px-[5%] mt-20">
         <h2 className="text-4xl font-bold mb-6">Comienza Tu Transformación Hoy</h2>
         <p className="text-xl mb-8">
           Accede a más de 100 tutoriales premium y conviértete en experta
@@ -149,12 +165,7 @@ export default function EvolvePage() {
         <button className="inline-block px-10 py-4 bg-white text-[#D4C5AE] rounded-full font-semibold hover:translate-y-[-3px] hover:shadow-xl transition-all duration-300">
           Explorar Cursos
         </button>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white text-center py-8">
-        <p>&copy; 2026 Evolve. Todos los derechos reservados.</p>
-      </footer>
+      </section>      
     </div>
   );
 }
